@@ -1,13 +1,263 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 body {
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .hero-bg {
   background: #307d99 url("../images/bg.jpg");
+  background-position: 12% 83%;
   color: white;
-  padding: 4em;
+  padding: 4rem;
   text-align: center;
+}
+
+header {
+  padding: 1em 0;
+}
+
+.hero-bg a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+section {
+  margin: 0 1em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 2em 0 1.2em;
+}
+
+h2 {
+  position: relative;
+  text-transform: uppercase;
+}
+
+h2::before {
+  background: #00bfff;
+  bottom: 0;
+  content: "";
+  height: 0.4em;
+  margin-left: -0.3em;
+  position: absolute;
+  width: 8em;
+  z-index: -1;
+}
+
+h1 span {
+  display: block;
+  font-size: 1.4rem;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+h1 span::before {
+  background: #00bfff;
+  bottom: 0;
+  content: "";
+  height: 0.4em;
+  margin-left: -0.3em;
+  position: absolute;
+  width: 3em;
+  z-index: -1;
+}
+
+p {
+  line-height: 2em;
+}
+
+.hero-bg p {
+  font-weight: bold;
+  margin: 0 1em 3em;
+}
+
+.form-container {
+  background-color: white;
+  margin: 2em -1em 0;
+  padding: 2em;
+}
+
+.form-container p {
+  color: gray;
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-bottom: 1.5em;
+  margin-top: 0.3em;
+}
+
+label {
+  color: #2d7d98;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+input[type="text"] {
+  border: 1px solid #707070;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  margin-top: 1.2em;
+  padding: 1em;
+  width: 100%;
+}
+
+input[type="button"] {
+  background-color: #f89104;
+  border: none;
+  border-radius: 0.5em;
+  color: white;
+  cursor: pointer;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 1em 0;
+  width: 100%;
+}
+
+input[type="button"]:hover {
+  background-color: rgb(216, 126, 1);
+}
+
+.authentic {
+  margin: 0;
+}
+
+.right-col {
+  margin: 3em 1em;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: none;
+  height: 100vh;
+  position: absolute;
+  place-content: center;
+  opacity: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.animate-overlay {
+  animation: overlay 3s forwards;
+}
+
+@media screen and (min-width: 730px) {
+  .form-container {
+    margin: 2em -4em 0;
+  }
+
+  section {
+    margin: 0 4em;
+  }
+}
+
+@media screen and (min-width: 930px) {
+  .hero-bg {
+    text-align: left;
+  }
+
+  .hero-bg p {
+    margin: 0 0 3em;
+  }
+
+  .hero-bg section {
+    width: 65%;
+  }
+
+  .form-container {
+    border-radius: 0.5em;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    margin: 2em 0 0;
+    padding: 2em;
+  }
+
+  form {
+    display: flex;
+  }
+
+  .form-left {
+    width: 70%;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  input[type="button"] {
+    font-size: 1.1em;
+    margin-left: 1em;
+    margin-top: 2.2em;
+    height: fit-content;
+    padding: 0.7em 0;
+    width: 30%;
+  }
+
+  .hero-bg p {
+    margin-bottom: 0;
+  }
+
+  .authentic {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-areas: "bowl content";
+  }
+
+  .right-col {
+    align-self: center;
+    grid-area: content;
+    padding: 0 10%;
+    text-align: left;
+  }
+
+  img {
+    grid-area: bowl;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.top {
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
